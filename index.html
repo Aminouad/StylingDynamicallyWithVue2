@@ -19,7 +19,11 @@
     <section id="styling">
       <!-- <div class="demo" :style="{borderColor: boxASelected ? 'red' : '#ccc'}" @click="boxSeclected('A')"></div> -->
       <!-- <div :class="boxASelected ? 'demo active' : 'demo' " @click="boxSeclected('A')"></div>   // method not recommended -->
-      <div class="demo" :class="{active: boxASelected}" @click="boxSeclected('A')"></div>  <!-- //Best method -->
+<!--       <div class="demo" :class="{active: boxASelected}" @click="boxSeclected('A')"></div>  //Best method without the use of computed
+ -->      
+      <!-- <div class="demo" :class="boxAClasses" @click="boxSeclected('A')"></div> -->  <!-- //Best method with the use of computed-->
+      <div :class="['demo',{active: boxASelected}]" @click="boxSeclected('A')"></div>  <!-- //Best method with the use of computed Also wen make array of classes -->
+
       <div class="demo" :class="{active: boxBSelected}" @click="boxSeclected('B')"></div>
       <div class="demo" :class="{active: boxCSelected}" @click="boxSeclected('C')"></div>
     </section>
